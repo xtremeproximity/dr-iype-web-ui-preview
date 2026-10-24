@@ -12,8 +12,8 @@
   <script src="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/_ds_bundle.js"></script>
 </helmet>
 <header data-screen-label="Nav" style="background:var(--white);border-bottom:1px solid var(--border-default)">
-  <div style="max-width:1160px;margin:0 auto;padding:0 32px;height:{{ headerH }}px;display:flex;align-items:center;justify-content:space-between;gap:20px;transition:height 220ms cubic-bezier(0.4,0,0.2,1)">
-    <a href="index.html" style="font-family:var(--font-display);font-weight:var(--display-weight);letter-spacing:var(--display-tracking);font-size:21px;color:var(--ink);white-space:nowrap">Satheesh Iype</a>
+  <div style="max-width:1160px;margin:0 auto;padding:0 {{ padX }}px;height:{{ headerH }}px;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:height 220ms cubic-bezier(0.4,0,0.2,1)">
+    <a href="Home v3.dc.html" style="font-family:var(--font-display);font-weight:var(--display-weight);letter-spacing:var(--display-tracking);font-size:21px;color:var(--ink);white-space:nowrap">Satheesh Iype</a>
     <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
       <nav aria-label="Main" style="display:flex;align-items:center;gap:22px;height:100%">
         <sc-for list="{{ nav }}" as="item" hint-placeholder-count="8">
@@ -31,15 +31,17 @@
         </sc-for>
       </nav>
     </sc-if>
-    <div style="display:flex;align-items:center;gap:10px">
-      <x-import component-from-global-scope="SatheeshIypeDesignSystem_d9def9.Button" href="consultations.html#book" size="sm" hint-size="160px,38px">Book a Consultation</x-import>
+    <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+      <sc-if value="{{ showHeaderCta }}" hint-placeholder-val="{{ true }}">
+        <x-import component-from-global-scope="SatheeshIypeDesignSystem_d9def9.Button" href="Consultations.dc.html#book" size="sm" hint-size="160px,38px">Book a Consultation</x-import>
+      </sc-if>
       <sc-if value="{{ compact }}" hint-placeholder-val="{{ false }}">
-        <button onClick="{{ toggleMobile }}" aria-expanded="{{ mobileOpen }}" style="height:44px;padding:0 14px;border-radius:8px;border:1px solid var(--border-strong);background:var(--white);font-family:var(--font-body);font-size:13px;font-weight:600;color:var(--ink);cursor:pointer" style-active="background:var(--mint)">{{ menuLabel }}</button>
+        <button onClick="{{ toggleMobile }}" aria-expanded="{{ mobileOpen }}" aria-controls="mobile-nav" style="flex-shrink:0;height:44px;padding:0 14px;border-radius:8px;border:1px solid var(--border-strong);background:var(--white);font-family:var(--font-body);font-size:13px;font-weight:600;color:var(--ink);cursor:pointer" style-active="background:var(--mint)">{{ menuLabel }}</button>
       </sc-if>
     </div>
   </div>
   <sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
-    <div style="border-top:1px solid var(--border-default);padding:8px 32px 20px;display:flex;flex-direction:column">
+    <nav id="mobile-nav" aria-label="Main" style="border-top:1px solid var(--border-default);padding:8px {{ padX }}px 24px;display:flex;flex-direction:column;max-height:calc(100vh - {{ headerH }}px);max-height:calc(100dvh - {{ headerH }}px);overflow-y:auto;overscroll-behavior:contain">
       <sc-for list="{{ nav }}" as="item" hint-placeholder-count="8">
         <div style="border-bottom:1px solid var(--border-default)">
           <a href="{{ item.href }}" onClick="{{ item.onMobile }}" aria-current="{{ item.current }}" style="display:flex;justify-content:space-between;padding:14px 0;font-size:16px;font-weight:{{ item.weight }};color:var(--ink)">{{ item.label }}<sc-if value="{{ item.hasMenu }}" hint-placeholder-val="{{ false }}"><span style="color:var(--teal-text)">{{ item.mobileGlyph }}</span></sc-if></a>
@@ -53,7 +55,12 @@
           </sc-if>
         </div>
       </sc-for>
-    </div>
+      <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:20px;display:flex;flex-direction:column">
+          <x-import component-from-global-scope="SatheeshIypeDesignSystem_d9def9.Button" href="Consultations.dc.html#book" size="lg" hint-size="100%,48px">Book a Consultation</x-import>
+        </div>
+      </sc-if>
+    </nav>
   </sc-if>
 </header>
 </x-dc>
@@ -80,11 +87,11 @@ class Component extends DCLogic {
     const current = this.props.current ?? '';
     const desktop = w >= 1180;
     const menus = {
-      Conditions: { menu: [['Gallstones', 'gallstones.html'], ['Pancreatic Cancer'], ['Liver Cancer'], ['Hernia'], ['Bile Duct Cancer']], hub: 'All conditions →', hubHref: 'conditions.html' },
-      Procedures: { menu: [['Laparoscopic or Robotic Cholecystectomy'], ['Whipple Procedure'], ['Distal Pancreatectomy'], ['Liver Resection', 'liver-resection.html'], ['Hernia Repair']], hub: 'All procedures →', hubHref: 'procedures.html' },
+      Conditions: { menu: [['Gallstones', 'Condition - Gallstones.dc.html'], ['Pancreatic Cancer'], ['Liver Cancer'], ['Hernia'], ['Bile Duct Cancer']], hub: 'All conditions →', hubHref: 'Conditions.dc.html' },
+      Procedures: { menu: [['Laparoscopic or Robotic Cholecystectomy'], ['Whipple Procedure'], ['Distal Pancreatectomy'], ['Liver Resection', 'Procedure - Liver Resection.dc.html'], ['Hernia Repair']], hub: 'All procedures →', hubHref: 'Procedures.dc.html' },
     };
     const labels = ['Home', 'About', 'Conditions', 'Procedures', 'Patient Journey', 'Publications & Media', 'Consultations', 'Contact'];
-    const hrefs = { Home: 'index.html', About: 'about.html', 'Patient Journey': 'patient-journey.html', 'Publications & Media': 'publications-media.html', Consultations: 'consultations.html', Contact: 'contact.html' };
+    const hrefs = { Home: 'Home v3.dc.html', About: 'About.dc.html', 'Patient Journey': 'Patient Journey.dc.html', 'Publications & Media': 'Publications - Media.dc.html', Consultations: 'Consultations.dc.html', Contact: 'Contact.dc.html' };
     const nav = labels.map(label => {
       const m = menus[label];
       const isOpen = !!m && open === label;
@@ -103,6 +110,7 @@ class Component extends DCLogic {
     });
     return {
       nav, desktop, compact: !desktop, headerH: scrolled ? 60 : 76,
+      narrow: w < 560, showHeaderCta: w >= 560, padX: w < 640 ? 20 : 32,
       mobileOpen: !desktop && mobileOpen, menuLabel: mobileOpen ? 'Close' : 'Menu',
       toggleMobile: () => this.setState({ mobileOpen: !mobileOpen }),
     };
