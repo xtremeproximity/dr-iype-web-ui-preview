@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/styles.css">
+  <script src="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/_ds_bundle.js"></script>
+</helmet>
+<section data-screen-label="CTA banner" style="max-width:1160px;margin:0 auto;padding:0 32px 64px">
+  <div style="position:relative;overflow:hidden;border-radius:20px;background:radial-gradient(80% 120% at 100% 0%,rgba(255,255,255,0.7) 0%,rgba(255,255,255,0) 60%),linear-gradient(160deg,var(--sky-1) 0%,var(--sky-2) 60%,color-mix(in oklch,var(--sky-2) 78%,var(--teal)) 100%);padding:clamp(40px,6vw,72px) clamp(28px,6vw,72px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px 48px">
+    <div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:12px">
+      <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--display-weight);letter-spacing:var(--display-tracking);font-size:clamp(28px,3.4vw,40px);line-height:1.12;color:var(--ink);text-wrap:balance">{{ heading }}</h2>
+      <p style="margin:0;font-size:17px;color:color-mix(in oklch,var(--stone) 78%,var(--ink))">{{ body }}</p>
+    </div>
+    <div style="flex:none"><x-import component-from-global-scope="SatheeshIypeDesignSystem_d9def9.Button" size="lg" href="{{ ctaHref }}" hint-size="210px,48px">{{ ctaLabel }}</x-import></div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;320px&quot;},&quot;heading&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Arrange a Consultation or Second Opinion&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;body&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;We'll guide you through the details.&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;ctaLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Book a Consultation&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;ctaHref&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;consultations.html#book&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    return {
+      heading: p.heading ?? 'Arrange a Consultation or Second Opinion',
+      body: p.body ?? "We'll guide you through the details.",
+      ctaLabel: p.ctaLabel ?? 'Book a Consultation',
+      ctaHref: p.ctaHref ?? 'consultations.html#book',
+    };
+  }
+}
+</script>
+</body>
+</html>

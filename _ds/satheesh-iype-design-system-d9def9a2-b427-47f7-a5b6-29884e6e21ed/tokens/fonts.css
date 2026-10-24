@@ -1,0 +1,8 @@
+/* v2: Figtree for display AND body — one humanist-geometric family.
+   Replaces Quicksand + Inter. Chosen for care/authority balance: rounded enough to feel
+   approachable, structured enough to read as clinical-grade. Loaded from Google Fonts. */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap');
+:root{
+  --font-display:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+}

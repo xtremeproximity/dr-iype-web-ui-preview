@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/styles.css">
+  <script src="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/_ds_bundle.js"></script>
+</helmet>
+<header data-screen-label="Nav" style="background:var(--white);border-bottom:1px solid var(--border-default)">
+  <div style="max-width:1160px;margin:0 auto;padding:0 32px;height:{{ headerH }}px;display:flex;align-items:center;justify-content:space-between;gap:20px;transition:height 220ms cubic-bezier(0.4,0,0.2,1)">
+    <a href="index.html" style="font-family:var(--font-display);font-weight:var(--display-weight);letter-spacing:var(--display-tracking);font-size:21px;color:var(--ink);white-space:nowrap">Satheesh Iype</a>
+    <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="Main" style="display:flex;align-items:center;gap:22px;height:100%">
+        <sc-for list="{{ nav }}" as="item" hint-placeholder-count="8">
+          <div onMouseEnter="{{ item.onEnter }}" onMouseLeave="{{ item.onLeave }}" style="position:relative;height:100%;display:flex;align-items:center">
+            <a href="{{ item.href }}" onClick="{{ item.onClick }}" aria-expanded="{{ item.isOpen }}" aria-current="{{ item.current }}" style="font-size:14px;font-weight:{{ item.weight }};color:{{ item.color }};display:flex;align-items:center;gap:5px;white-space:nowrap;padding:8px 0;border-radius:4px" style-hover="color:var(--teal-text)" style-active="color:var(--ink)" style-focus="outline:2px solid var(--focus-ring);outline-offset:4px">{{ item.label }}<sc-if value="{{ item.hasMenu }}" hint-placeholder-val="{{ false }}"><span style="font-size:9px;color:var(--teal-text);display:inline-block;transition:transform 220ms cubic-bezier(0.4,0,0.2,1);transform:rotate({{ item.rot }}deg)">▼</span></sc-if></a>
+            <sc-if value="{{ item.hasMenu }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute;top:calc(100% - 6px);left:-20px;min-width:290px;background:var(--white);border-radius:16px;box-shadow:var(--shadow-card);padding:12px;display:flex;flex-direction:column;gap:2px;opacity:{{ item.op }};visibility:{{ item.vis }};transform:translateY({{ item.ty }}px);transition:opacity 150ms cubic-bezier(0.4,0,0.2,1),transform 220ms cubic-bezier(0.4,0,0.2,1),visibility 220ms">
+                <sc-for list="{{ item.menu }}" as="m" hint-placeholder-count="5">
+                  <a href="{{ m.href }}" style="padding:10px 12px;border-radius:8px;font-size:14px;color:var(--ink)" style-hover="background:var(--mint);color:var(--teal-text)" style-active="background:var(--sky-2)">{{ m.label }}</a>
+                </sc-for>
+                <a href="{{ item.hubHref }}" style="margin-top:6px;padding:12px 12px 4px;border-top:1px solid var(--border-default);font-size:13px;font-weight:600;color:var(--teal-text)">{{ item.hubLabel }}</a>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </nav>
+    </sc-if>
+    <div style="display:flex;align-items:center;gap:10px">
+      <x-import component-from-global-scope="SatheeshIypeDesignSystem_d9def9.Button" href="consultations.html#book" size="sm" hint-size="160px,38px">Book a Consultation</x-import>
+      <sc-if value="{{ compact }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ toggleMobile }}" aria-expanded="{{ mobileOpen }}" style="height:44px;padding:0 14px;border-radius:8px;border:1px solid var(--border-strong);background:var(--white);font-family:var(--font-body);font-size:13px;font-weight:600;color:var(--ink);cursor:pointer" style-active="background:var(--mint)">{{ menuLabel }}</button>
+      </sc-if>
+    </div>
+  </div>
+  <sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="border-top:1px solid var(--border-default);padding:8px 32px 20px;display:flex;flex-direction:column">
+      <sc-for list="{{ nav }}" as="item" hint-placeholder-count="8">
+        <div style="border-bottom:1px solid var(--border-default)">
+          <a href="{{ item.href }}" onClick="{{ item.onMobile }}" aria-current="{{ item.current }}" style="display:flex;justify-content:space-between;padding:14px 0;font-size:16px;font-weight:{{ item.weight }};color:var(--ink)">{{ item.label }}<sc-if value="{{ item.hasMenu }}" hint-placeholder-val="{{ false }}"><span style="color:var(--teal-text)">{{ item.mobileGlyph }}</span></sc-if></a>
+          <sc-if value="{{ item.mobileSubOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;padding:0 0 12px 14px">
+              <sc-for list="{{ item.menu }}" as="m" hint-placeholder-count="5">
+                <a href="{{ m.href }}" style="padding:9px 0;font-size:15px;color:var(--stone)">{{ m.label }}</a>
+              </sc-for>
+              <a href="{{ item.hubHref }}" style="padding:9px 0;font-size:14px;font-weight:600;color:var(--teal-text)">{{ item.hubLabel }}</a>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;360px&quot;},&quot;current&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;&quot;,&quot;Home&quot;,&quot;About&quot;,&quot;Conditions&quot;,&quot;Procedures&quot;,&quot;Patient Journey&quot;,&quot;Publications &amp; Media&quot;,&quot;Consultations&quot;,&quot;Contact&quot;],&quot;default&quot;:&quot;Home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1280, scrolled: false, open: null, mobileOpen: false, mobileSub: null };
+  componentDidMount() {
+    this._onScroll = () => { const y = window.scrollY, c = this.state.scrolled; const s = c ? y > 4 : y > 64; if (s !== c) this.setState({ scrolled: s }); };
+    this._onResize = () => this.setState({ w: window.innerWidth });
+    this._onKey = (e) => { if (e.key === 'Escape' && (this.state.open || this.state.mobileOpen)) this.setState({ open: null, mobileOpen: false, mobileSub: null }); };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onResize);
+    window.addEventListener('keydown', this._onKey);
+    this._onScroll();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onResize);
+    window.removeEventListener('keydown', this._onKey);
+    clearTimeout(this._ct);
+  }
+  renderVals() {
+    const { w, scrolled, open, mobileOpen, mobileSub } = this.state;
+    const current = this.props.current ?? '';
+    const desktop = w >= 1180;
+    const menus = {
+      Conditions: { menu: [['Gallstones', 'gallstones.html'], ['Pancreatic Cancer'], ['Liver Cancer'], ['Hernia'], ['Bile Duct Cancer']], hub: 'All conditions →', hubHref: 'conditions.html' },
+      Procedures: { menu: [['Laparoscopic or Robotic Cholecystectomy'], ['Whipple Procedure'], ['Distal Pancreatectomy'], ['Liver Resection', 'liver-resection.html'], ['Hernia Repair']], hub: 'All procedures →', hubHref: 'procedures.html' },
+    };
+    const labels = ['Home', 'About', 'Conditions', 'Procedures', 'Patient Journey', 'Publications & Media', 'Consultations', 'Contact'];
+    const hrefs = { Home: 'index.html', About: 'about.html', 'Patient Journey': 'patient-journey.html', 'Publications & Media': 'publications-media.html', Consultations: 'consultations.html', Contact: 'contact.html' };
+    const nav = labels.map(label => {
+      const m = menus[label];
+      const isOpen = !!m && open === label;
+      const cur = label === current;
+      return {
+        label, hasMenu: !!m, href: hrefs[label] || (m ? m.hubHref : '#'), hubHref: m ? m.hubHref : '#', hubLabel: m ? m.hub : '',
+        menu: m ? m.menu.map(([l, h]) => ({ label: l, href: h || m.hubHref })) : [],
+        current: cur ? 'page' : undefined, color: cur ? 'var(--teal-text)' : 'var(--stone)', weight: cur ? 600 : 500, isOpen,
+        op: isOpen ? 1 : 0, vis: isOpen ? 'visible' : 'hidden', ty: isOpen ? 0 : -6, rot: isOpen ? 180 : 0,
+        onEnter: () => { clearTimeout(this._ct); this.setState({ open: m ? label : null }); },
+        onLeave: () => { clearTimeout(this._ct); this._ct = setTimeout(() => this.setState({ open: null }), 160); },
+        onClick: (e) => { if (m) { e.preventDefault(); this.setState({ open: isOpen ? null : label }); } },
+        mobileSubOpen: !!m && mobileSub === label, mobileGlyph: mobileSub === label ? '–' : '+',
+        onMobile: (e) => { if (m) { e.preventDefault(); this.setState({ mobileSub: mobileSub === label ? null : label }); } },
+      };
+    });
+    return {
+      nav, desktop, compact: !desktop, headerH: scrolled ? 60 : 76,
+      mobileOpen: !desktop && mobileOpen, menuLabel: mobileOpen ? 'Close' : 'Menu',
+      toggleMobile: () => this.setState({ mobileOpen: !mobileOpen }),
+    };
+  }
+}
+</script>
+</body>
+</html>

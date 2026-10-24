@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publication | Mr Satheesh Iype</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:,">
+<link rel="preload" href="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/_ds_bundle.js" as="script">
+<link rel="preload" href="site-header.dc.html" as="fetch" crossorigin>
+<link rel="preload" href="cta-banner.dc.html" as="fetch" crossorigin>
+<style>html.dc-loading body{opacity:0}html body{transition:opacity 180ms ease-out}@media (prefers-reduced-motion:reduce){html body{transition:none}}.sc-placeholder{visibility:hidden}</style>
+<script>(function(){var d=document.documentElement;d.classList.add('dc-loading');var t0=Date.now();function done(){d.classList.remove('dc-loading')}function check(){var b=document.body;if(b&&b.querySelector('header')&&!b.querySelector('.sc-placeholder')){setTimeout(done,60);return}if(Date.now()-t0>3000){done();return}setTimeout(check,40)}check()})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;display=swap">
+  <script src="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/_ds_bundle.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root{--font-display:'Figtree',system-ui,sans-serif;--font-body:'Figtree',system-ui,sans-serif;--display-weight:600;--focus-ring:var(--teal-text);--display-tracking:-0.025em}
+    html,body,#dc-root,#dc-root>.sc-host{height:auto!important;min-height:100%}
+    body{margin:0;background:#fff;color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased}
+    a{color:var(--teal-text);text-decoration:none}
+    a:hover{color:var(--ink)}
+    @media (prefers-reduced-motion: reduce){*{transition:none !important}}
+  </style>
+</helmet>
+
+<dc-import name="site-header" current="Publications &amp; Media" style="position:sticky;top:0;z-index:50;display:block" hint-size="100%,76px"></dc-import>
+
+<section data-screen-label="Page header" style="background:linear-gradient(180deg,var(--mint) 0%,var(--white) 100%)">
+  <div style="max-width:1160px;margin:0 auto;padding:40px 32px 48px;display:flex;flex-direction:column;gap:18px">
+    <nav aria-label="Breadcrumb" style="display:flex;flex-wrap:wrap;gap:8px;font-size:14px;color:var(--stone)"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="publications-media.html">Publications &amp; Media</a><span aria-hidden="true">/</span><span aria-current="page" style="color:var(--ink)">{{ it.crumb }}</span></nav>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px"><span style="padding:6px 12px;border-radius:999px;background:var(--teal-text);color:var(--white);font-size:13px;font-weight:600">{{ it.badge }}</span><span style="padding:6px 12px;border-radius:999px;background:var(--white);color:var(--teal-text);font-size:13px;font-weight:600">{{ it.date }}</span></div>
+    <h1 style="margin:0;font-family:var(--font-display);font-weight:var(--display-weight);letter-spacing:-0.035em;font-size:clamp(34px,4.2vw,50px);line-height:1.06;color:var(--ink);text-wrap:balance;max-width:900px">{{ it.title }}</h1>
+    <p style="margin:0;font-size:17px;line-height:1.5;color:var(--stone);max-width:760px">{{ it.source }}</p>
+  </div>
+</section>
+
+<div style="max-width:1160px;margin:0 auto;padding:16px 32px 88px;display:flex;flex-wrap:wrap;gap:40px 64px;align-items:flex-start">
+  <article style="flex:2 1 560px;min-width:0;max-width:760px;display:flex;flex-direction:column;gap:32px">
+    <sc-if value="{{ isMedia }}" hint-placeholder-val="{{ false }}">
+
+    </sc-if>
+    <section style="display:flex;flex-direction:column;gap:14px">
+      <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--display-weight);letter-spacing:-0.025em;font-size:26px;line-height:1.15;color:var(--ink)">{{ it.summaryHeading }}</h2>
+      <p style="margin:0;font-size:18px;line-height:1.7;color:var(--ink);text-wrap:pretty">{{ it.summary }}</p>
+    </section>
+    <sc-if value="{{ isPub }}" hint-placeholder-val="{{ true }}">
+      <div style="border:1.5px dashed var(--border-strong);border-radius:16px;padding:24px 26px;display:flex;flex-direction:column;gap:6px">
+        <span style="font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:var(--stone)">Optional</span>
+        <span style="font-size:16px;line-height:1.6;color:var(--ink)">A short plain-English note from Mr Iype on why this research matters for patients.</span>
+      </div>
+    </sc-if>
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <a href="{{ it.url }}" target="_blank" rel="noopener" style="height:48px;padding:0 24px;border-radius:999px;background:var(--teal-text);color:var(--white);display:flex;align-items:center;font-size:16px;font-weight:600" style-hover="color:var(--white);background:color-mix(in oklch,var(--teal-text) 80%,var(--ink))">{{ it.cta }} ↗</a>
+      <a href="publications-media.html" style="height:48px;padding:0 22px;border-radius:999px;border:1px solid var(--border-strong);display:flex;align-items:center;font-size:16px;font-weight:600;color:var(--ink)">← All Publications &amp; Media</a>
+    </div>
+  </article>
+  <aside style="flex:1 1 280px;min-width:0;border-radius:20px;background:var(--mint);padding:26px 26px 10px;display:flex;flex-direction:column">
+    <span style="font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:var(--teal-text);padding-bottom:10px">Details</span>
+    <sc-for list="{{ it.details }}" as="d" hint-placeholder-count="4">
+      <div style="display:flex;flex-direction:column;gap:3px;padding:14px 0;border-top:1px solid color-mix(in oklch,var(--border-strong) 45%,var(--mint))"><span style="font-size:13px;color:var(--stone)">{{ d.k }}</span><span style="font-size:16px;line-height:1.45;color:var(--ink);word-break:break-word">{{ d.v }}</span></div>
+    </sc-for>
+  </aside>
+</div>
+
+<dc-import name="cta-banner" hint-size="100%,300px"></dc-import>
+
+<footer data-screen-label="Footer" style="max-width:1160px;margin:0 auto;padding:0 32px 32px">
+  <x-import component-from-global-scope="SatheeshIypeDesignSystem_d9def9.Footer" columns="{{ footer }}" hint-size="100%,220px"></x-import>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;kind&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Publication&quot;,&quot;Media&quot;],&quot;default&quot;:&quot;Publication&quot;,&quot;tsType&quot;:&quot;'Publication' | 'Media'&quot;}}">
+class Component extends DCLogic {
+  state = { sent: {}, fileName: '', w: typeof window !== 'undefined' ? window.innerWidth : 1280, scrolled: false, open: null, mobileOpen: false, mobileSub: null };
+  componentDidMount() {
+    this._onScroll = () => { const y = window.scrollY, c = this.state.scrolled; const s = c ? y > 4 : y > 64; if (s !== c) this.setState({ scrolled: s }); };
+    this._onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onResize);
+    let n = 0;
+    this._lt = setInterval(() => { if (window.lucide || ++n > 30) { clearInterval(this._lt); this.forceUpdate(); } }, 200);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onResize);
+    clearInterval(this._lt); clearTimeout(this._ct);
+  }
+  icon(name, size = 32) {
+    const L = window.lucide;
+    const key = name.split('-').map(s => s[0].toUpperCase() + s.slice(1)).join('');
+    let node = L && L.icons && L.icons[key];
+    if (!node) return React.createElement('span', { style: { width: size, height: size, display: 'inline-block' } });
+    let kids = node;
+    if (node[0] === 'svg' && Array.isArray(node[2])) kids = node[2];
+    return React.createElement('svg', { width: size, height: size, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.5, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true },
+      kids.map(([tag, attrs], i) => React.createElement(tag, { key: i, ...attrs })));
+  }
+  renderVals() {
+    const { w, scrolled, open, mobileOpen, mobileSub } = this.state;
+    const desktop = w >= 1180;
+    return {
+      ...(() => {
+        const q = typeof location !== 'undefined' && /kind=media/.test(location.search);
+        const kind = this.props.kind ?? (q ? 'Media' : 'Publication');
+        const pub = { crumb: 'Publication', badge: 'Randomised controlled trial', date: '2026', title: 'A pilot, two-center, sequential dose escalation safety study of alteplase with fresh frozen plasma during normothermic liver perfusion', source: 'Liver Transplantation', summaryHeading: 'About This Study',
+          summary: 'A two-centre safety study of adding alteplase with fresh frozen plasma during normothermic machine perfusion of donor livers, to address fibrin that may be present before transplantation.',
+          cta: 'Read on PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/41631847/',
+          details: [{ k: 'Journal', v: 'Liver Transplantation' }, { k: 'Year', v: '2026' }, { k: 'Study type', v: 'Randomised controlled trial' }, { k: 'PMID', v: '41631847' }, { k: 'DOI', v: '10.1097/LVT.0000000000000814' }, { k: 'Research interest', v: 'Normothermic and normothermic regional perfusion in liver transplantation' }] };
+        const media = { crumb: 'In the News', badge: 'In the News', date: 'May 2019', title: 'Liver transplant patients benefit from new technology at the Royal Free Hospital', source: 'Royal Free London NHS Foundation Trust', summaryHeading: "Mr Iype's Role",
+          summary: 'Performed the featured transplant using the OrganOx machine and explained how it helps assess donor livers.',
+          cta: 'Read the full story', url: 'https://www.royalfree.nhs.uk/news/liver-transplant-patients-benefit-new-technology-royal-free-hospital',
+          details: [{ k: 'Published by', v: 'Royal Free London' }, { k: 'Date', v: 'May 2019' }, { k: 'Type', v: 'News story' }, { k: 'Research interest', v: 'Normothermic and normothermic regional perfusion in liver transplantation' }] };
+        return { it: kind === 'Media' ? media : pub, isMedia: kind === 'Media', isPub: kind !== 'Media' };
+      })(),
+      footer: [
+        { heading: 'Satheesh Iype', links: ['Consultant Liver and Pancreatic (HPB) Surgeon', 'Royal Free Hospital, London'] },
+        { heading: 'Professional', links: ['LinkedIn', 'ResearchGate', 'GMC', 'NHS Profile'] },
+        { heading: 'Quick links', links: [{ label: 'Conditions', href: 'conditions.html' }, { label: 'Procedures', href: 'procedures.html' }, { label: 'Publications', href: 'publications-media.html' }, { label: 'Contact', href: 'contact.html' }, { label: 'Book a Consultation', href: 'consultations.html#book' }] },
+        { heading: 'Reviews & legal', links: [{ label: 'Doctify rating', href: 'https://www.doctify.com/uk/specialist/mr-satheesh--iype', external: true }, 'Privacy Policy', 'Cookie Policy', 'Accessibility'] },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

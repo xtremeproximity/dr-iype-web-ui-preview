@@ -1,0 +1,42 @@
+:root{
+  /* base palette, from the client-approved v3 reference */
+  --ink:#10282B;
+  --teal:#1E8FA6;
+  --teal-text:#0D6577;
+  --teal-light:#3FB6D6;
+  --line-strong:#7E9296;
+  --mint:#EAF6F4;
+  --blue-card:#2F63C0;
+  --blue-card-2:#3B7DD8;
+  --dark-card:#0E2226;
+  --stone:#5C6B70;
+  --line:#DDE7EA;
+  --sky-1:#DCEFF9;
+  --sky-2:#C9E6F3;
+  --white:#FFFFFF;
+
+  /* semantic aliases — use these in components */
+  --surface-page:var(--white);
+  --surface-sunken:var(--mint);
+  --surface-hero:linear-gradient(160deg,var(--sky-1),var(--sky-2));
+  --surface-inverse:var(--ink);
+  --surface-card-tint:var(--mint);
+  --surface-card-blue:var(--blue-card);
+  --surface-card-dark:var(--dark-card);
+
+  --text-primary:var(--ink);
+  --text-muted:var(--stone);
+  --text-inverse:var(--white);
+  --text-inverse-muted:#9DB0B3;
+  --text-accent:var(--teal-text);
+
+  --accent:var(--teal);
+  --accent-strong:var(--teal-text);
+  --accent-light:var(--teal-light);
+
+  --border-default:var(--line);
+  --border-strong:var(--line-strong);
+  --border-inverse:rgba(255,255,255,0.25);
+
+  --focus-ring:var(--teal-light);
+}

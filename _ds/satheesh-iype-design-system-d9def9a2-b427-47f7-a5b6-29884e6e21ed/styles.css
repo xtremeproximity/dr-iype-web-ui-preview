@@ -1,0 +1,15 @@
+@import 'tokens/fonts.css';
+@import 'tokens/colors.css';
+@import 'tokens/typography.css';
+@import 'tokens/spacing.css';
+@import 'tokens/effects.css';
+
+/* v3: focus ring is --teal-text (6.7:1 on white). --teal-light stays for accents on dark ground. */
+:root{ --focus-ring:var(--teal-text); }
+
+:focus-visible{ outline:2px solid var(--focus-ring); outline-offset:3px; }
+html{ scroll-padding-top:96px; }
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{ transition-duration:0.01ms !important; animation-duration:0.01ms !important; scroll-behavior:auto !important; }
+}

@@ -1,0 +1,22 @@
+:root{
+  --text-eyebrow:13px;   /* v3: was 12 — matches every built page */
+  --text-caption:13px;
+  --text-body-sm:15px;   /* v2: was 14 — card/list copy floor */
+  --text-body:16px;      /* v2: was 15 */
+  --text-body-lg:17px;   /* v2: was 16 — lead paragraphs */
+  --text-h4:20px;
+  --text-h3:26px;
+  --text-h3-lg:28px;
+  --text-h2:clamp(28px,3.2vw,36px);   /* v2: fluid, was 32 */
+  --text-h1:clamp(36px,4.6vw,54px);   /* v2: fluid, was 44 */
+  --text-closing:clamp(32px,4vw,46px);/* v2: closing CTA headline */
+  --leading-tight:1.08;
+  --leading-snug:1.2;
+  --leading-normal:1.6;
+  --tracking-eyebrow:0.07em; /* v3: was 0.08 */
+  --tracking-display:-0.02em;  /* v2: new — headings only, body stays 0 */
+  --weight-body:400;
+  --weight-medium:500;
+  --weight-semibold:600;
+  --weight-display:600;        /* v2: was 700 (Quicksand) */
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQs | Mr Satheesh Iype</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:,">
+<link rel="preload" href="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/_ds_bundle.js" as="script">
+<link rel="preload" href="site-header.dc.html" as="fetch" crossorigin>
+<link rel="preload" href="page-header.dc.html" as="fetch" crossorigin>
+<link rel="preload" href="cta-banner.dc.html" as="fetch" crossorigin>
+<style>html.dc-loading body{opacity:0}html body{transition:opacity 180ms ease-out}@media (prefers-reduced-motion:reduce){html body{transition:none}}.sc-placeholder{visibility:hidden}</style>
+<script>(function(){var d=document.documentElement;d.classList.add('dc-loading');var t0=Date.now();function done(){d.classList.remove('dc-loading')}function check(){var b=document.body;if(b&&b.querySelector('header')&&!b.querySelector('.sc-placeholder')){setTimeout(done,60);return}if(Date.now()-t0>3000){done();return}setTimeout(check,40)}check()})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;display=swap">
+  <script src="_ds/satheesh-iype-design-system-d9def9a2-b427-47f7-a5b6-29884e6e21ed/_ds_bundle.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root{--font-display:'Figtree',system-ui,sans-serif;--font-body:'Figtree',system-ui,sans-serif;--display-weight:600;--focus-ring:var(--teal-text);--display-tracking:-0.025em}
+    html,body,#dc-root,#dc-root>.sc-host{height:auto!important;min-height:100%}
+    body{margin:0;background:#fff;color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased}
+    a{color:var(--teal-text);text-decoration:none}
+    a:hover{color:var(--ink)}
+    @media (prefers-reduced-motion: reduce){*{transition:none !important}}
+  </style>
+</helmet>
+
+<dc-import name="site-header" current="" style="position:sticky;top:0;z-index:50;display:block" hint-size="100%,76px"></dc-import>
+
+<dc-import name="page-header" crumb="FAQ" eyebrow="FAQ" title="Frequently Asked Questions" intro="A starting set, based on the questions patients and referring GPs most commonly ask before enquiring." hint-size="100%,300px"></dc-import>
+
+<section data-screen-label="FAQ list" style="max-width:1160px;margin:0 auto;padding:16px 32px 88px;display:flex;flex-wrap:wrap;gap:32px 64px;align-items:flex-start">
+  <div style="flex:2 1 560px;min-width:0;max-width:820px">
+    <x-import component-from-global-scope="SatheeshIypeDesignSystem_d9def9.FAQAccordion" items="{{ faqs }}" hint-size="100%,420px"></x-import>
+  </div>
+  <aside style="flex:1 1 260px;min-width:0;border-radius:20px;background:var(--mint);padding:28px;display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+    <span style="margin:0;font-family:var(--font-display);font-weight:var(--display-weight);letter-spacing:var(--display-tracking);font-size:20px;line-height:1.3;color:var(--ink)">Can't find your answer?</span>
+    <span style="font-size:16px;line-height:1.6;color:var(--stone)">The practice secretary can help with anything not covered here.</span>
+    <a href="contact.html" style="margin-top:4px;font-size:15px;font-weight:600">Get in Touch →</a>
+  </aside>
+</section>
+
+<dc-import name="cta-banner" hint-size="100%,300px"></dc-import>
+
+<footer data-screen-label="Footer" style="max-width:1160px;margin:0 auto;padding:0 32px 32px">
+  <x-import component-from-global-scope="SatheeshIypeDesignSystem_d9def9.Footer" columns="{{ footer }}" hint-size="100%,220px"></x-import>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1280, scrolled: false, open: null, mobileOpen: false, mobileSub: null };
+  componentDidMount() {
+    this._onScroll = () => { const y = window.scrollY, c = this.state.scrolled; const s = c ? y > 4 : y > 64; if (s !== c) this.setState({ scrolled: s }); };
+    this._onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onResize);
+    let n = 0;
+    this._lt = setInterval(() => { if (window.lucide || ++n > 30) { clearInterval(this._lt); this.forceUpdate(); } }, 200);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onResize);
+    clearInterval(this._lt); clearTimeout(this._ct);
+  }
+  icon(name, size = 32) {
+    const L = window.lucide;
+    const key = name.split('-').map(s => s[0].toUpperCase() + s.slice(1)).join('');
+    let node = L && L.icons && L.icons[key];
+    if (!node) return React.createElement('span', { style: { width: size, height: size, display: 'inline-block' } });
+    let kids = node;
+    if (node[0] === 'svg' && Array.isArray(node[2])) kids = node[2];
+    return React.createElement('svg', { width: size, height: size, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.5, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true },
+      kids.map(([tag, attrs], i) => React.createElement(tag, { key: i, ...attrs })));
+  }
+  renderVals() {
+    const { w, scrolled, open, mobileOpen, mobileSub } = this.state;
+    const desktop = w >= 1180;
+    return {
+      faqs: [
+        { question: 'Do I need a GP referral to see Mr Iype?', answer: "No, a GP referral isn't required. You're welcome to contact us directly to arrange a private consultation." },
+        { question: 'Which hospitals does Mr Iype practise at?', answer: "Cleveland Clinic London and the Royal Free Private Patients' Unit (private practice), and the Royal Free Hospital, London (NHS practice)." },
+        { question: 'What conditions and procedures does Mr Iype treat?', answer: 'Gallstones, hernia, and cancers of the liver, pancreas, and bile duct, using laparoscopic, robotic, and open techniques. See the Conditions and Procedures pages for the full list.' },
+        { question: 'Does Mr Iype treat cancer?', answer: 'Yes, cancer surgery is central to his practice.' },
+        { question: 'How does a second opinion request work?', answer: 'Second opinion enquiries are screened by the secretary and presented to Mr Iype within 24 hours. A formal second opinion is provided within 1 week. Where a case is complex, it may be presented to the Multidisciplinary Team (MDT) meeting.' },
+        { question: 'What should I bring to my first consultation?', answer: 'Referral letters, scan reports, and any relevant history.' },
+      ],
+      footer: [
+        { heading: 'Satheesh Iype', links: ['Consultant Liver and Pancreatic (HPB) Surgeon', 'Royal Free Hospital, London'] },
+        { heading: 'Professional', links: ['LinkedIn', 'ResearchGate', 'GMC', 'NHS Profile'] },
+        { heading: 'Quick links', links: [{ label: 'Conditions', href: 'conditions.html' }, { label: 'Procedures', href: 'procedures.html' }, { label: 'Publications', href: 'publications-media.html' }, { label: 'Contact', href: 'contact.html' }, { label: 'Book a Consultation', href: 'consultations.html#book' }] },
+        { heading: 'Reviews & legal', links: [{ label: 'Doctify rating', href: 'https://www.doctify.com/uk/specialist/mr-satheesh--iype', external: true }, 'Privacy Policy', 'Cookie Policy', 'Accessibility'] },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

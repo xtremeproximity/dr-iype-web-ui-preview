@@ -1,0 +1,26 @@
+:root{
+  --radius-sm:8px;
+  --radius-md:10px;
+  --radius-lg:16px;
+  --radius-xl:20px;
+  --radius-pill:999px;
+  --radius-circle:50%;
+
+  --shadow-float:0 20px 40px -16px rgba(16,40,43,0.35);
+  --shadow-card:0 8px 24px -12px rgba(16,40,43,0.18);
+
+  --ease-standard:cubic-bezier(0.4,0,0.2,1); /* @kind other */
+  --duration-fast:150ms; /* @kind other */
+  --duration-base:220ms; /* @kind other */
+
+  /* photo-treatment gradients: every real/stock/generated photo on the site is
+     cropped and given this teal-ink duotone wash so authentic photography and
+     placeholder/stock imagery read as one consistent family. See readme
+     VISUAL FOUNDATIONS > Imagery. */
+  --photo-duotone-1:linear-gradient(150deg,#8FA6AC,#5E7379); /* @kind color */
+  --photo-duotone-2:linear-gradient(150deg,#7C9AA1,#4C6870); /* @kind color */
+  --photo-duotone-3:linear-gradient(160deg,#3E6E75,#274C52); /* @kind color */
+  --photo-duotone-4:linear-gradient(150deg,#6E8B90,#3A555A); /* @kind color */
+  --photo-duotone-5:linear-gradient(150deg,#5F9AA6,#345056); /* @kind color */
+  --photo-duotone-6:linear-gradient(150deg,#C7DDE1,#8FB0B6); /* @kind color */
+}
