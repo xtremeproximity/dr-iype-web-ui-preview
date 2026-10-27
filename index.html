@@ -74,10 +74,22 @@
         </div>
       </sc-for>
     </div>
-    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 24px;padding-top:18px;border-top:1px solid var(--border-default)">
-      <span style="font-size: 14px; font-weight: 600; color: var(--teal-text); letter-spacing: 0.01em">MBBS · MS · DNB · MCh · MRCS · MPhil (Cantab) · FEBS · FRCS</span>
-      <span style="font-size: 14px; font-weight: 600; color: var(--teal-text)">GMC 6047680</span>
-    </div>
+    <sc-if value="{{ credWide }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 24px;padding-top:18px;border-top:1px solid var(--border-default)">
+        <span style="font-size: 14px; font-weight: 600; color: var(--teal-text); letter-spacing: 0.01em">MBBS · MS · DNB · MCh · MRCS · MPhil (Cantab) · FEBS · FRCS</span>
+        <span style="font-size: 14px; font-weight: 600; color: var(--teal-text)">GMC 6047680</span>
+      </div>
+    </sc-if>
+    <sc-if value="{{ credNarrow }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:12px;padding-top:18px;border-top:1px solid var(--border-default)">
+        <ul aria-label="Qualifications" style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 14px">
+          <sc-for list="{{ credItems }}" as="c" hint-placeholder-count="8">
+            <li style="font-size:14px;font-weight:600;letter-spacing:0.01em;color:var(--teal-text);white-space:nowrap">{{ c }}</li>
+          </sc-for>
+        </ul>
+        <p style="margin:0;padding-top:12px;border-top:1px solid var(--border-default);font-size:14px;font-weight:600;color:var(--teal-text)">GMC 6047680</p>
+      </div>
+    </sc-if>
   </div>
 </div>
 </section>
@@ -265,6 +277,8 @@ class Component extends DCLogic {
       showCards: this.props.heroCards ?? true,
       rBottom: w >= 840 ? '18%' : '64px',
       icons: { conditions: this.icon('stethoscope'), procedures: this.icon('activity'), journey: this.icon('route'), publications: this.icon('book-open') },
+      credWide: w >= 640, credNarrow: w < 640,
+      credItems: ['MBBS', 'MS', 'DNB', 'MCh', 'MRCS', 'MPhil (Cantab)', 'FEBS', 'FRCS'],
       heroTextPad: w >= 840 ? 'calc(32px + clamp(32px,5vw,64px))' : '0px',
       factCols: w >= 1000 ? 4 : w >= 520 ? 2 : 1,
       facts: [
