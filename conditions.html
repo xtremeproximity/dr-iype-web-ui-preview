@@ -135,7 +135,7 @@ class Component extends DCLogic {
       ].map(([organ, title, body], i) => ({ organ, title, body, href: i === 0 ? 'gallstones.html' : undefined, span: i === 4 && w >= 760 ? '1 / -1' : 'auto' })),
       also: ['Bile duct obstruction and strictures', 'Chronic pancreatitis', 'Liver cysts and pancreatic cysts', 'Secondary (metastatic) liver cancer', 'Neuroendocrine tumours', 'Splenic cysts and splenic tumours', 'Portal hypertension', 'Gallbladder cancer'],
       footer: [
-        { heading: 'Satheesh Iype', links: ['Consultant Liver and Pancreatic (HPB) Surgeon', 'Royal Free Hospital, London'] },
+        { heading: React.createElement('span', { style: { display: 'block', fontFamily: 'var(--font-display)', fontWeight: 'var(--display-weight)', letterSpacing: 'var(--display-tracking)', fontSize: 21, lineHeight: 1.2, textTransform: 'none', marginBottom: 4 } }, 'Satheesh Iype'), links: ['Consultant Liver and Pancreatic (HPB) Surgeon', 'Royal Free Hospital, London'] },
         { heading: 'Professional', links: ['LinkedIn', 'ResearchGate', 'GMC', 'NHS Profile'] },
         { heading: 'Quick links', links: [{ label: 'Conditions', href: 'conditions.html' }, { label: 'Procedures', href: 'procedures.html' }, { label: 'Publications', href: 'publications-media.html' }, { label: 'Contact', href: 'contact.html' }, { label: 'Book a Consultation', href: 'consultations.html#book' }] },
         { heading: 'Reviews & legal', links: [{ label: 'Doctify rating', href: 'https://www.doctify.com/uk/specialist/mr-satheesh--iype', external: true }, 'Privacy Policy', 'Cookie Policy', 'Accessibility'] },

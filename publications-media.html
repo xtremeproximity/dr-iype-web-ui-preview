@@ -168,7 +168,7 @@ class Component extends DCLogic {
         ['May 2019', 'Liver transplant patients benefit from new technology at the Royal Free Hospital', 'Performed the featured transplant using the OrganOx machine and explained how it helps assess donor livers.', 'https://www.royalfree.nhs.uk/news/liver-transplant-patients-benefit-new-technology-royal-free-hospital'],
       ].map(([date, title, desc, url], i) => ({ date, title, desc, url, page: i === 4 ? 'publication.html?kind=media' : url })),
       footer: [
-        { heading: 'Satheesh Iype', links: ['Consultant Liver and Pancreatic (HPB) Surgeon', 'Royal Free Hospital, London'] },
+        { heading: React.createElement('span', { style: { display: 'block', fontFamily: 'var(--font-display)', fontWeight: 'var(--display-weight)', letterSpacing: 'var(--display-tracking)', fontSize: 21, lineHeight: 1.2, textTransform: 'none', marginBottom: 4 } }, 'Satheesh Iype'), links: ['Consultant Liver and Pancreatic (HPB) Surgeon', 'Royal Free Hospital, London'] },
         { heading: 'Professional', links: ['LinkedIn', 'ResearchGate', 'GMC', 'NHS Profile'] },
         { heading: 'Quick links', links: [{ label: 'Conditions', href: 'conditions.html' }, { label: 'Procedures', href: 'procedures.html' }, { label: 'Publications', href: 'publications-media.html' }, { label: 'Contact', href: 'contact.html' }, { label: 'Book a Consultation', href: 'consultations.html#book' }] },
         { heading: 'Reviews & legal', links: [{ label: 'Doctify rating', href: 'https://www.doctify.com/uk/specialist/mr-satheesh--iype', external: true }, 'Privacy Policy', 'Cookie Policy', 'Accessibility'] },
